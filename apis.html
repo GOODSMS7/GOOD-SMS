@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#08050d">
+
+    <title>GOOD SMS | APIs</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <span class="logo-good">GOOD</span>
+                <span class="logo-sms">SMS</span>
+            </div>
+
+            <div class="sidebar-section">
+
+                <span class="sidebar-title">
+                    PRINCIPAL
+                </span>
+
+                <a href="dashboard.html" class="sidebar-link">
+                    <span>01</span>
+                    Dashboard
+                </a>
+
+                <a href="apis.html" class="sidebar-link active">
+                    <span>02</span>
+                    APIs
+                </a>
+
+            </div>
+
+            <div class="sidebar-section">
+
+                <span class="sidebar-title">
+                    ADMINISTRAÇÃO
+                </span>
+
+                <a href="admins.html" class="sidebar-link">
+                    <span>03</span>
+                    Administradores
+                </a>
+
+                <a href="security.html" class="sidebar-link">
+                    <span>04</span>
+                    Segurança
+                </a>
+
+                <a href="logs.html" class="sidebar-link">
+                    <span>05</span>
+                    Logs
+                </a>
+
+                <a href="settings.html" class="sidebar-link">
+                    <span>06</span>
+                    Configurações
+                </a>
+
+            </div>
+
+            <div class="sidebar-bottom">
+
+                <div class="admin-card">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Administrador</strong>
+                        <span>Conta protegida</span>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    Sair da conta
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <span class="page-label">
+                        GOOD SMS / INTEGRAÇÕES
+                    </span>
+
+                    <h1>
+                        APIs
+                    </h1>
+
+                    <p>
+                        Gerencie os provedores e integrações autorizadas
+                        da plataforma.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="mobile-menu"
+                    id="mobileMenu"
+                    aria-label="Abrir menu"
+                >
+                    ☰
+                </button>
+
+            </header>
+
+
+            <!-- AVISO DE SEGURANÇA -->
+
+            <section class="dashboard-status">
+
+                <div class="status-main">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            Credenciais protegidas
+                        </strong>
+
+                        <span>
+                            As chaves secretas devem permanecer no servidor.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-primary"
+                    id="newApiButton"
+                >
+                    + Adicionar API
+                </button>
+
+            </section>
+
+
+            <!-- ESTATÍSTICAS -->
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>INTEGRAÇÕES</span>
+                        <span class="stat-index">01</span>
+                    </div>
+
+                    <strong id="totalApis">
+                        0
+                    </strong>
+
+                    <p>
+                        APIs cadastradas
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>ATIVAS</span>
+                        <span class="stat-index">02</span>
+                    </div>
+
+                    <strong
+                        id="activeApis"
+                        class="stat-online"
+                    >
+                        0
+                    </strong>
+
+                    <p>
+                        Integrações disponíveis
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>INATIVAS</span>
+                        <span class="stat-index">03</span>
+                    </div>
+
+                    <strong id="inactiveApis">
+                        0
+                    </strong>
+
+                    <p>
+                        Integrações desativadas
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>SEGURANÇA</span>
+                        <span class="stat-index">04</span>
+                    </div>
+
+                    <strong class="stat-secure">
+                        SERVIDOR
+                    </strong>
+
+                    <p>
+                        Segredos protegidos
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- LISTA DE APIS -->
+
+            <section class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            INTEGRAÇÕES
+                        </span>
+
+                        <h2>
+                            Provedores configurados
+                        </h2>
+
+                    </div>
+
+                    <span class="status-badge">
+                        PROTEGIDO
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    PROVEDOR
+                                </th>
+
+                                <th>
+                                    IDENTIFICAÇÃO
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    ÚLTIMA VERIFICAÇÃO
+                                </th>
+
+                                <th>
+                                    AÇÕES
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="apisTableBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    <div class="empty-table">
+
+                                        <span>
+                                            00
+                                        </span>
+
+                                        <strong>
+                                            Nenhuma API configurada
+                                        </strong>
+
+                                        <p>
+                                            As integrações cadastradas
+                                            aparecerão aqui.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- MODAL -->
+
+            <div
+                class="modal-overlay"
+                id="apiModal"
+                aria-hidden="true"
+            >
+
+                <div class="admin-modal">
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                NOVA INTEGRAÇÃO
+                            </span>
+
+                            <h2>
+                                Adicionar API
+                            </h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            id="closeApiModal"
+                            aria-label="Fechar"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <form id="apiForm">
+
+                        <div class="modal-grid">
+
+                            <div class="form-group">
+
+                                <label for="apiName">
+                                    Nome do provedor
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="apiName"
+                                    name="name"
+                                    placeholder="Ex.: Provedor SMS"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="apiIdentifier">
+                                    Identificador
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="apiIdentifier"
+                                    name="identifier"
+                                    placeholder="Nome interno da integração"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="apiBaseUrl">
+                                    URL da API
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="apiBaseUrl"
+                                    name="baseUrl"
+                                    placeholder="https://api.exemplo.com"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="apiKey">
+                                    API Key / Token
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="apiKey"
+                                    name="apiKey"
+                                    placeholder="Será armazenada no servidor"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                                <small>
+                                    Nunca coloque uma chave real diretamente
+                                    no HTML ou JavaScript.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="permission-section">
+
+                            <span class="permission-title">
+                                CONFIGURAÇÃO
+                            </span>
+
+                            <label class="permission-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="apiActive"
+                                    name="active"
+                                    checked
+                                >
+
+                                <span>
+                                    Ativar integração imediatamente
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div
+                            id="apiMessage"
+                            class="login-message"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <div class="modal-actions">
+
+                            <button
+                                type="button"
+                                class="btn-secondary"
+                                id="cancelApiButton"
+                            >
+                                Cancelar
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn-primary"
+                            >
+                                Salvar integração
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/apis.js"></script>
+
+</body>
+
+  </html>
