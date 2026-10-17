@@ -1,0 +1,61 @@
+# Dependências
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+
+# Cloudflare
+.wrangler/
+.dev.vars
+
+# Logs locais
+logs/
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+
+# Credenciais e certificados
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Banco local
+*.sqlite
+*.sqlite3
+*.db
+
+# Backups
+*.bak
+*.backup
+
+# Builds
+dist/
+build/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Arquivos de teste locais
+test-results/
+coverage/
