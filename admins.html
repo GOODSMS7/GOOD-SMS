@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#08050d">
+
+    <title>GOOD SMS | Administradores</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <span class="logo-good">GOOD</span>
+                <span class="logo-sms">SMS</span>
+            </div>
+
+            <div class="sidebar-section">
+
+                <span class="sidebar-title">
+                    PRINCIPAL
+                </span>
+
+                <a href="dashboard.html" class="sidebar-link">
+                    <span>01</span>
+                    Dashboard
+                </a>
+
+                <a href="apis.html" class="sidebar-link">
+                    <span>02</span>
+                    APIs
+                </a>
+
+            </div>
+
+            <div class="sidebar-section">
+
+                <span class="sidebar-title">
+                    ADMINISTRAÇÃO
+                </span>
+
+                <a href="admins.html" class="sidebar-link active">
+                    <span>03</span>
+                    Administradores
+                </a>
+
+                <a href="security.html" class="sidebar-link">
+                    <span>04</span>
+                    Segurança
+                </a>
+
+                <a href="logs.html" class="sidebar-link">
+                    <span>05</span>
+                    Logs
+                </a>
+
+                <a href="settings.html" class="sidebar-link">
+                    <span>06</span>
+                    Configurações
+                </a>
+
+            </div>
+
+            <div class="sidebar-bottom">
+
+                <div class="admin-card">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Administrador</strong>
+                        <span>Conta protegida</span>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    Sair da conta
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <span class="page-label">
+                        GOOD SMS / ADMINISTRAÇÃO
+                    </span>
+
+                    <h1>
+                        Administradores
+                    </h1>
+
+                    <p>
+                        Controle as contas que possuem acesso
+                        administrativo à plataforma.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="mobile-menu"
+                    id="mobileMenu"
+                    aria-label="Abrir menu"
+                >
+                    ☰
+                </button>
+
+            </header>
+
+
+            <!-- CONTROLE -->
+
+            <section class="dashboard-status">
+
+                <div class="status-main">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            Controle de acesso
+                        </strong>
+
+                        <span>
+                            Gerencie permissões e contas administrativas.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-primary"
+                    id="newAdminButton"
+                >
+                    + Novo administrador
+                </button>
+
+            </section>
+
+
+            <!-- RESUMO -->
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>TOTAL</span>
+                        <span class="stat-index">01</span>
+                    </div>
+
+                    <strong id="totalAdmins">
+                        0
+                    </strong>
+
+                    <p>
+                        Administradores cadastrados
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>ATIVOS</span>
+                        <span class="stat-index">02</span>
+                    </div>
+
+                    <strong
+                        id="activeAdmins"
+                        class="stat-online"
+                    >
+                        0
+                    </strong>
+
+                    <p>
+                        Contas com acesso ativo
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>BLOQUEADOS</span>
+                        <span class="stat-index">03</span>
+                    </div>
+
+                    <strong id="blockedAdmins">
+                        0
+                    </strong>
+
+                    <p>
+                        Contas sem acesso
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>PROTEÇÃO</span>
+                        <span class="stat-index">04</span>
+                    </div>
+
+                    <strong class="stat-secure">
+                        ATIVA
+                    </strong>
+
+                    <p>
+                        Controle administrativo
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- TABELA -->
+
+            <section class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            CONTAS
+                        </span>
+
+                        <h2>
+                            Administradores cadastrados
+                        </h2>
+
+                    </div>
+
+                    <span
+                        id="adminTableStatus"
+                        class="status-badge"
+                    >
+                        PROTEGIDO
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ADMINISTRADOR
+                                </th>
+
+                                <th>
+                                    E-MAIL
+                                </th>
+
+                                <th>
+                                    PERMISSÃO
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    AÇÕES
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="adminsTableBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    <div class="empty-table">
+
+                                        <span>
+                                            00
+                                        </span>
+
+                                        <strong>
+                                            Nenhum administrador cadastrado
+                                        </strong>
+
+                                        <p>
+                                            As contas administrativas
+                                            aparecerão aqui.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- MODAL -->
+
+            <div
+                class="modal-overlay"
+                id="adminModal"
+                aria-hidden="true"
+            >
+
+                <div class="admin-modal">
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                NOVA CONTA
+                            </span>
+
+                            <h2>
+                                Criar administrador
+                            </h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            id="closeAdminModal"
+                            aria-label="Fechar"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <form id="adminForm">
+
+                        <div class="modal-grid">
+
+                            <div class="form-group">
+
+                                <label for="adminName">
+                                    Nome
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="adminName"
+                                    name="name"
+                                    placeholder="Nome do administrador"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="adminEmail">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="adminEmail"
+                                    name="email"
+                                    placeholder="admin@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="adminPassword">
+                                    Senha
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="adminPassword"
+                                    name="password"
+                                    placeholder="Senha forte"
+                                    autocomplete="new-password"
+                                    minlength="12"
+                                    required
+                                >
+
+                                <small>
+                                    Use uma senha forte com pelo menos
+                                    12 caracteres.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="adminPin">
+                                    PIN administrativo
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="adminPin"
+                                    name="pin"
+                                    placeholder="000000"
+                                    inputmode="numeric"
+                                    pattern="[0-9]{6}"
+                                    minlength="6"
+                                    maxlength="6"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="permission-section">
+
+                            <span class="permission-title">
+                                PERMISSÕES
+                            </span>
+
+                            <label class="permission-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="permissions"
+                                    value="dashboard"
+                                    checked
+                                >
+
+                                <span>
+                                    Dashboard
+                                </span>
+
+                            </label>
+
+
+                            <label class="permission-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="permissions"
+                                    value="apis"
+                                >
+
+                                <span>
+                                    Gerenciar APIs
+                                </span>
+
+                            </label>
+
+
+                            <label class="permission-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="permissions"
+                                    value="admins"
+                                >
+
+                                <span>
+                                    Gerenciar administradores
+                                </span>
+
+                            </label>
+
+
+                            <label class="permission-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="permissions"
+                                    value="security"
+                                >
+
+                                <span>
+                                    Segurança
+                                </span>
+
+                            </label>
+
+
+                            <label class="permission-option">
+
+                                <input
+                                    type="checkbox"
+                                    name="permissions"
+                                    value="settings"
+                                >
+
+                                <span>
+                                    Configurações
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div
+                            id="adminMessage"
+                            class="login-message"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <div class="modal-actions">
+
+                            <button
+                                type="button"
+                                class="btn-secondary"
+                                id="cancelAdminButton"
+                            >
+                                Cancelar
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn-primary"
+                            >
+                                Criar administrador
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/admins.js"></script>
+
+</body>
+
+                      </html>
