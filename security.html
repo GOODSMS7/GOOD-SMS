@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="GOOD SMS - Segurança da plataforma"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08050d"
+    >
+
+    <title>GOOD SMS | Segurança</title>
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-logo"
+            >
+                <span class="logo-good">
+                    GOOD
+                </span>
+
+                <span class="logo-sms">
+                    SMS
+                </span>
+            </a>
+
+            <div class="sidebar-status">
+
+                <span class="status-dot"></span>
+
+                Sistema online
+
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    01
+                </span>
+
+                Dashboard
+            </a>
+
+
+            <a
+                href="apis.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    02
+                </span>
+
+                APIs
+            </a>
+
+
+            <a
+                href="admins.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    03
+                </span>
+
+                Administradores
+            </a>
+
+
+            <a
+                href="security.html"
+                class="sidebar-link active"
+            >
+                <span class="sidebar-icon">
+                    04
+                </span>
+
+                Segurança
+            </a>
+
+
+            <a
+                href="logs.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    05
+                </span>
+
+                Auditoria
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    06
+                </span>
+
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <!-- ADMIN -->
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-admin">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div class="admin-info">
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Acesso autorizado
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="sidebar-logout"
+            >
+                Encerrar sessão
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="dashboard-main">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <div class="breadcrumb">
+                    GOOD SMS / Segurança
+                </div>
+
+                <h1>
+                    Segurança
+                </h1>
+
+                <p>
+                    Controle as proteções e políticas
+                    de segurança da plataforma.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-header-status">
+
+                <span class="status-dot"></span>
+
+                Proteção ativa
+
+            </div>
+
+        </header>
+
+
+        <!-- RESUMO -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        SESSÕES
+                    </span>
+
+                    <span class="stat-number">
+                        01
+                    </span>
+
+                </div>
+
+                <strong>
+                    Ativas
+                </strong>
+
+                <p>
+                    Sessões administrativas
+                    atualmente autorizadas.
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        LOGIN
+                    </span>
+
+                    <span class="stat-number">
+                        2FA
+                    </span>
+
+                </div>
+
+                <strong>
+                    Protegido
+                </strong>
+
+                <p>
+                    Senha e PIN administrativo
+                    habilitados.
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        ACESSOS
+                    </span>
+
+                    <span class="stat-number">
+                        0
+                    </span>
+
+                </div>
+
+                <strong>
+                    Bloqueados
+                </strong>
+
+                <p>
+                    Tentativas suspeitas bloqueadas
+                    pelo sistema.
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <span class="stat-number">
+                        OK
+                    </span>
+
+                </div>
+
+                <strong>
+                    Protegido
+                </strong>
+
+                <p>
+                    Configurações básicas
+                    de segurança ativas.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- GRID DE SEGURANÇA -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- AUTENTICAÇÃO -->
+
+            <article class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <small>
+                            AUTENTICAÇÃO
+                        </small>
+
+                        <h2>
+                            Proteção de acesso
+                        </h2>
+
+                    </div>
+
+                    <span class="online">
+                        ATIVO
+                    </span>
+
+                </div>
+
+
+                <div class="security-options">
+
+                    <div class="security-option">
+
+                        <div>
+
+                            <strong>
+                                PIN administrativo
+                            </strong>
+
+                            <p>
+                                Exigir PIN de 6 dígitos
+                                durante o login.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="requirePin"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="security-option">
+
+                        <div>
+
+                            <strong>
+                                Sessão segura
+                            </strong>
+
+                            <p>
+                                Utilizar sessão protegida
+                                para administradores.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="secureSession"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="security-option">
+
+                        <div>
+
+                            <strong>
+                                Limite de tentativas
+                            </strong>
+
+                            <p>
+                                Bloquear temporariamente
+                                acessos repetidos.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="loginProtection"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SESSÕES -->
+
+            <article class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <small>
+                            SESSÕES
+                        </small>
+
+                        <h2>
+                            Controle de sessões
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="session-box">
+
+                    <div class="session-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Sessão atual
+                        </strong>
+
+                        <p>
+                            Dispositivo administrativo
+                        </p>
+
+                        <span>
+                            Sessão protegida
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutOtherSessions"
+                    class="btn-secondary full-button"
+                >
+                    Encerrar outras sessões
+                </button>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- POLÍTICAS -->
+
+        <section class="dashboard-card security-policy-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <small>
+                        POLÍTICAS
+                    </small>
+
+                    <h2>
+                        Políticas de segurança
+                    </h2>
+
+                    <p>
+                        Recomendações aplicadas ao ambiente
+                        administrativo da GOOD SMS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="security-policy-grid">
+
+
+                <div class="policy-item">
+
+                    <span class="policy-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Senhas fortes
+                        </strong>
+
+                        <p>
+                            Senhas administrativas devem
+                            possuir no mínimo 12 caracteres.
+                        </p>
+
+                    </div>
+
+                    <span class="policy-status">
+                        ATIVO
+                    </span>
+
+                </div>
+
+
+                <div class="policy-item">
+
+                    <span class="policy-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            PIN adicional
+                        </strong>
+
+                        <p>
+                            O segundo fator administrativo
+                            utiliza PIN de 6 dígitos.
+                        </p>
+
+                    </div>
+
+                    <span class="policy-status">
+                        ATIVO
+                    </span>
+
+                </div>
+
+
+                <div class="policy-item">
+
+                    <span class="policy-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            HTTPS
+                        </strong>
+
+                        <p>
+                            As integrações externas devem
+                            utilizar conexões HTTPS.
+                        </p>
+
+                    </div>
+
+                    <span class="policy-status">
+                        ATIVO
+                    </span>
+
+                </div>
+
+
+                <div class="policy-item">
+
+                    <span class="policy-number">
+                        04
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Segredos protegidos
+                        </strong>
+
+                        <p>
+                            Chaves de API não devem ser
+                            armazenadas no código do frontend.
+                        </p>
+
+                    </div>
+
+                    <span class="policy-status">
+                        ATIVO
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ALERTA -->
+
+        <section class="dashboard-card security-warning">
+
+            <div class="warning-icon">
+                !
+            </div>
+
+            <div>
+
+                <strong>
+                    Segurança do backend
+                </strong>
+
+                <p>
+                    As configurações exibidas nesta página
+                    são apenas a interface administrativa.
+                    As regras reais de autenticação,
+                    permissões, sessões, rate limiting e
+                    armazenamento de credenciais deverão
+                    ser aplicadas no servidor.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+<script src="js/security.js"></script>
+
+</body>
+
+  </html>
