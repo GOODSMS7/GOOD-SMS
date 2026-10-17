@@ -1,0 +1,16 @@
+{
+  "name": "good-sms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GOOD SMS - Plataforma de gerenciamento de serviços SMS e integrações autorizadas",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute good_sms_db --local --file=database/schema.sql",
+    "db:remote": "wrangler d1 execute good_sms_db --remote --file=database/schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
