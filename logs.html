@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="GOOD SMS - Auditoria e registros de segurança"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08050d"
+    >
+
+    <title>GOOD SMS | Auditoria</title>
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-logo"
+            >
+                <span class="logo-good">
+                    GOOD
+                </span>
+
+                <span class="logo-sms">
+                    SMS
+                </span>
+            </a>
+
+            <div class="sidebar-status">
+
+                <span class="status-dot"></span>
+
+                Sistema online
+
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    01
+                </span>
+
+                Dashboard
+            </a>
+
+
+            <a
+                href="apis.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    02
+                </span>
+
+                APIs
+            </a>
+
+
+            <a
+                href="admins.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    03
+                </span>
+
+                Administradores
+            </a>
+
+
+            <a
+                href="security.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    04
+                </span>
+
+                Segurança
+            </a>
+
+
+            <a
+                href="logs.html"
+                class="sidebar-link active"
+            >
+                <span class="sidebar-icon">
+                    05
+                </span>
+
+                Auditoria
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    06
+                </span>
+
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <!-- ADMIN -->
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-admin">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div class="admin-info">
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Acesso autorizado
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="sidebar-logout"
+            >
+                Encerrar sessão
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="dashboard-main">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <div class="breadcrumb">
+                    GOOD SMS / Auditoria
+                </div>
+
+                <h1>
+                    Auditoria
+                </h1>
+
+                <p>
+                    Consulte os eventos administrativos
+                    registrados pela plataforma.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-header-status">
+
+                <span class="status-dot"></span>
+
+                Monitoramento ativo
+
+            </div>
+
+        </header>
+
+
+        <!-- ESTATÍSTICAS -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        EVENTOS
+                    </span>
+
+                    <span
+                        class="stat-number"
+                        id="totalLogs"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+                <strong>
+                    Registrados
+                </strong>
+
+                <p>
+                    Eventos armazenados no
+                    sistema de auditoria.
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        LOGIN
+                    </span>
+
+                    <span
+                        class="stat-number"
+                        id="loginLogs"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+                <strong>
+                    Acessos
+                </strong>
+
+                <p>
+                    Entradas administrativas
+                    registradas.
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        SEGURANÇA
+                    </span>
+
+                    <span
+                        class="stat-number"
+                        id="securityLogs"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+                <strong>
+                    Eventos
+                </strong>
+
+                <p>
+                    Alertas e eventos relacionados
+                    à segurança.
+                </p>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <span class="stat-number">
+                        LIVE
+                    </span>
+
+                </div>
+
+                <strong>
+                    Monitorando
+                </strong>
+
+                <p>
+                    O sistema está preparado para
+                    registrar novas atividades.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- FILTROS -->
+
+        <section class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <small>
+                        FILTROS
+                    </small>
+
+                    <h2>
+                        Registros do sistema
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="logs-filters">
+
+                <div class="form-group">
+
+                    <label for="logType">
+                        Tipo de evento
+                    </label>
+
+                    <select id="logType">
+
+                        <option value="">
+                            Todos os eventos
+                        </option>
+
+                        <option value="login">
+                            Login
+                        </option>
+
+                        <option value="logout">
+                            Logout
+                        </option>
+
+                        <option value="admin">
+                            Administradores
+                        </option>
+
+                        <option value="api">
+                            APIs
+                        </option>
+
+                        <option value="security">
+                            Segurança
+                        </option>
+
+                        <option value="settings">
+                            Configurações
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="logStatus">
+                        Status
+                    </label>
+
+                    <select id="logStatus">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="success">
+                            Sucesso
+                        </option>
+
+                        <option value="warning">
+                            Atenção
+                        </option>
+
+                        <option value="error">
+                            Erro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="logSearch">
+                        Pesquisa
+                    </label>
+
+                    <input
+                        type="search"
+                        id="logSearch"
+                        placeholder="Pesquisar evento..."
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="clearFilters"
+                    class="btn-secondary"
+                >
+                    Limpar filtros
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TABELA -->
+
+        <section class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <small>
+                        ATIVIDADE
+                    </small>
+
+                    <h2>
+                        Histórico de eventos
+                    </h2>
+
+                </div>
+
+                <span class="online">
+                    AUDITORIA
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Data
+                            </th>
+
+                            <th>
+                                Evento
+                            </th>
+
+                            <th>
+                                Administrador
+                            </th>
+
+                            <th>
+                                Origem
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Ação
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="logsTableBody">
+
+                        <tr>
+
+                            <td colspan="6">
+
+                                <div class="empty-table">
+
+                                    <span>
+                                        00
+                                    </span>
+
+                                    <strong>
+                                        Nenhum evento encontrado
+                                    </strong>
+
+                                    <p>
+                                        Os registros de atividade
+                                        aparecerão aqui.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÃO -->
+
+        <section class="dashboard-card security-warning">
+
+            <div class="warning-icon">
+                !
+            </div>
+
+            <div>
+
+                <strong>
+                    Registro de auditoria
+                </strong>
+
+                <p>
+                    Os registros devem ser gerados e
+                    armazenados pelo backend. Informações
+                    sensíveis, como senhas, PINs e chaves
+                    completas de API, nunca devem ser
+                    gravadas nos logs.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+<script src="js/logs.js"></script>
+
+</body>
+
+  </html>
