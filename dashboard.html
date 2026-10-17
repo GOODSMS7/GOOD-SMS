@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#08050d">
+
+    <title>GOOD SMS | Dashboard</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <span class="logo-good">GOOD</span>
+                <span class="logo-sms">SMS</span>
+            </div>
+
+            <div class="sidebar-section">
+
+                <span class="sidebar-title">
+                    PRINCIPAL
+                </span>
+
+                <a href="dashboard.html" class="sidebar-link active">
+                    <span>01</span>
+                    Dashboard
+                </a>
+
+                <a href="apis.html" class="sidebar-link">
+                    <span>02</span>
+                    APIs
+                </a>
+
+            </div>
+
+            <div class="sidebar-section">
+
+                <span class="sidebar-title">
+                    ADMINISTRAÇÃO
+                </span>
+
+                <a href="admins.html" class="sidebar-link">
+                    <span>03</span>
+                    Administradores
+                </a>
+
+                <a href="security.html" class="sidebar-link">
+                    <span>04</span>
+                    Segurança
+                </a>
+
+                <a href="logs.html" class="sidebar-link">
+                    <span>05</span>
+                    Logs
+                </a>
+
+                <a href="settings.html" class="sidebar-link">
+                    <span>06</span>
+                    Configurações
+                </a>
+
+            </div>
+
+            <div class="sidebar-bottom">
+
+                <div class="admin-card">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+
+                        <strong>Administrador</strong>
+
+                        <span>Conta protegida</span>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    Sair da conta
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <span class="page-label">
+                        GOOD SMS / PAINEL
+                    </span>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Visão geral da plataforma e dos serviços.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="mobile-menu"
+                    id="mobileMenu"
+                    aria-label="Abrir menu"
+                >
+                    ☰
+                </button>
+
+            </header>
+
+
+            <!-- STATUS -->
+
+            <section class="dashboard-status">
+
+                <div class="status-main">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>Sistema operacional</strong>
+
+                        <span>
+                            Todos os serviços principais estão
+                            disponíveis.
+                        </span>
+                    </div>
+
+                </div>
+
+                <span class="status-badge">
+                    ONLINE
+                </span>
+
+            </section>
+
+
+            <!-- ESTATÍSTICAS -->
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>APIs</span>
+                        <span class="stat-index">01</span>
+                    </div>
+
+                    <strong id="apiCount">
+                        0
+                    </strong>
+
+                    <p>
+                        Integrações configuradas
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>ADMINISTRADORES</span>
+                        <span class="stat-index">02</span>
+                    </div>
+
+                    <strong id="adminCount">
+                        0
+                    </strong>
+
+                    <p>
+                        Contas administrativas
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>SEGURANÇA</span>
+                        <span class="stat-index">03</span>
+                    </div>
+
+                    <strong class="stat-secure">
+                        PROTEGIDA
+                    </strong>
+
+                    <p>
+                        Proteção da plataforma
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span>STATUS</span>
+                        <span class="stat-index">04</span>
+                    </div>
+
+                    <strong class="stat-online">
+                        ONLINE
+                    </strong>
+
+                    <p>
+                        Sistema operacional
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- ÁREA PRINCIPAL -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- ATIVIDADE -->
+
+                <article class="dashboard-card activity-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                MONITORAMENTO
+                            </span>
+
+                            <h2>
+                                Atividade recente
+                            </h2>
+
+                        </div>
+
+                        <a href="logs.html">
+                            Ver logs
+                        </a>
+
+                    </div>
+
+                    <div
+                        class="activity-list"
+                        id="activityList"
+                    >
+
+                        <div class="empty-state">
+
+                            <span class="empty-number">
+                                00
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Nenhuma atividade
+                                </strong>
+
+                                <p>
+                                    Os eventos do sistema aparecerão
+                                    aqui.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SISTEMA -->
+
+                <article class="dashboard-card system-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                SISTEMA
+                            </span>
+
+                            <h2>
+                                Serviços
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="service-list">
+
+                        <div class="service-item">
+
+                            <div>
+                                <strong>
+                                    API Gateway
+                                </strong>
+
+                                <span>
+                                    Comunicação
+                                </span>
+                            </div>
+
+                            <span class="service-status">
+                                ONLINE
+                            </span>
+
+                        </div>
+
+
+                        <div class="service-item">
+
+                            <div>
+                                <strong>
+                                    Banco de dados
+                                </strong>
+
+                                <span>
+                                    Armazenamento
+                                </span>
+                            </div>
+
+                            <span class="service-status">
+                                ONLINE
+                            </span>
+
+                        </div>
+
+
+                        <div class="service-item">
+
+                            <div>
+                                <strong>
+                                    Autenticação
+                                </strong>
+
+                                <span>
+                                    Controle de acesso
+                                </span>
+                            </div>
+
+                            <span class="service-status">
+                                PROTEGIDA
+                            </span>
+
+                        </div>
+
+
+                        <div class="service-item">
+
+                            <div>
+                                <strong>
+                                    Auditoria
+                                </strong>
+
+                                <span>
+                                    Registro de eventos
+                                </span>
+                            </div>
+
+                            <span class="service-status">
+                                ATIVA
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- AÇÕES -->
+
+            <section class="quick-actions">
+
+                <div class="section-heading">
+
+                    <span class="card-label">
+                        GERENCIAMENTO
+                    </span>
+
+                    <h2>
+                        Acesso rápido
+                    </h2>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+                    <a href="apis.html" class="quick-card">
+
+                        <span class="quick-number">
+                            01
+                        </span>
+
+                        <strong>
+                            Gerenciar APIs
+                        </strong>
+
+                        <span>
+                            Configurar integrações
+                        </span>
+
+                    </a>
+
+
+                    <a href="admins.html" class="quick-card">
+
+                        <span class="quick-number">
+                            02
+                        </span>
+
+                        <strong>
+                            Administradores
+                        </strong>
+
+                        <span>
+                            Gerenciar acessos
+                        </span>
+
+                    </a>
+
+
+                    <a href="security.html" class="quick-card">
+
+                        <span class="quick-number">
+                            03
+                        </span>
+
+                        <strong>
+                            Segurança
+                        </strong>
+
+                        <span>
+                            Configurar proteção
+                        </span>
+
+                    </a>
+
+
+                    <a href="settings.html" class="quick-card">
+
+                        <span class="quick-number">
+                            04
+                        </span>
+
+                        <strong>
+                            Configurações
+                        </strong>
+
+                        <span>
+                            Ajustar plataforma
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+  </html>
