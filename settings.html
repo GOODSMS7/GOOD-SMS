@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="GOOD SMS - Configurações da plataforma"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08050d"
+    >
+
+    <title>GOOD SMS | Configurações</title>
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-logo"
+            >
+                <span class="logo-good">
+                    GOOD
+                </span>
+
+                <span class="logo-sms">
+                    SMS
+                </span>
+            </a>
+
+            <div class="sidebar-status">
+
+                <span class="status-dot"></span>
+
+                Sistema online
+
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    01
+                </span>
+
+                Dashboard
+            </a>
+
+
+            <a
+                href="apis.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    02
+                </span>
+
+                APIs
+            </a>
+
+
+            <a
+                href="admins.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    03
+                </span>
+
+                Administradores
+            </a>
+
+
+            <a
+                href="security.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    04
+                </span>
+
+                Segurança
+            </a>
+
+
+            <a
+                href="logs.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">
+                    05
+                </span>
+
+                Auditoria
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="sidebar-link active"
+            >
+                <span class="sidebar-icon">
+                    06
+                </span>
+
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <!-- ADMIN -->
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-admin">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div class="admin-info">
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Acesso autorizado
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="sidebar-logout"
+            >
+                Encerrar sessão
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="dashboard-main">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <div class="breadcrumb">
+                    GOOD SMS / Configurações
+                </div>
+
+                <h1>
+                    Configurações
+                </h1>
+
+                <p>
+                    Controle as informações e parâmetros
+                    principais da plataforma.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-header-status">
+
+                <span class="status-dot"></span>
+
+                Configuração protegida
+
+            </div>
+
+        </header>
+
+
+        <!-- CONFIGURAÇÃO GERAL -->
+
+        <section class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <small>
+                        PLATAFORMA
+                    </small>
+
+                    <h2>
+                        Configuração geral
+                    </h2>
+
+                    <p>
+                        Informações básicas exibidas
+                        pelo sistema administrativo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="settingsForm">
+
+                <div class="settings-grid">
+
+                    <div class="form-group">
+
+                        <label for="siteName">
+                            Nome da plataforma
+                        </label>
+
+                        <input
+                            type="text"
+                            id="siteName"
+                            name="siteName"
+                            value="GOOD SMS"
+                            maxlength="80"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="siteStatus">
+                            Status da plataforma
+                        </label>
+
+                        <select
+                            id="siteStatus"
+                            name="siteStatus"
+                        >
+
+                            <option value="online">
+                                Online
+                            </option>
+
+                            <option value="maintenance">
+                                Manutenção
+                            </option>
+
+                            <option value="limited">
+                                Operação limitada
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="supportEmail">
+                            E-mail administrativo
+                        </label>
+
+                        <input
+                            type="email"
+                            id="supportEmail"
+                            name="supportEmail"
+                            placeholder="admin@seudominio.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="timezone">
+                            Fuso horário
+                        </label>
+
+                        <select
+                            id="timezone"
+                            name="timezone"
+                        >
+
+                            <option value="America/Sao_Paulo">
+                                Brasília — UTC-3
+                            </option>
+
+                            <option value="UTC">
+                                UTC
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="settingsMessage"
+                    class="login-message"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+                <div class="settings-actions">
+
+                    <button
+                        type="submit"
+                        class="btn-primary"
+                    >
+                        Salvar configurações
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- MÓDULOS -->
+
+        <section class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <small>
+                        MÓDULOS
+                    </small>
+
+                    <h2>
+                        Controle de funcionalidades
+                    </h2>
+
+                    <p>
+                        Ative ou desative módulos disponíveis
+                        no painel administrativo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="security-options">
+
+
+                <div class="security-option">
+
+                    <div>
+
+                        <strong>
+                            Integrações API
+                        </strong>
+
+                        <p>
+                            Permite gerenciar APIs e
+                            integrações autorizadas.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="moduleApis"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="security-option">
+
+                    <div>
+
+                        <strong>
+                            Administradores
+                        </strong>
+
+                        <p>
+                            Permite criar e gerenciar
+                            contas administrativas.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="moduleAdmins"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="security-option">
+
+                    <div>
+
+                        <strong>
+                            Auditoria
+                        </strong>
+
+                        <p>
+                            Mantém o histórico de eventos
+                            administrativos.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="moduleLogs"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="security-option">
+
+                    <div>
+
+                        <strong>
+                            Monitoramento
+                        </strong>
+
+                        <p>
+                            Exibe o estado dos serviços
+                            e integrações.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="moduleMonitoring"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- APARÊNCIA -->
+
+        <section class="dashboard-card">
+
+            <div class="dashboard-card-header">
+
+                <div>
+
+                    <small>
+                        INTERFACE
+                    </small>
+
+                    <h2>
+                        Aparência
+                    </h2>
+
+                    <p>
+                        Configurações visuais da área
+                        administrativa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+                <div class="form-group">
+
+                    <label for="theme">
+                        Tema
+                    </label>
+
+                    <select
+                        id="theme"
+                        name="theme"
+                    >
+
+                        <option value="dark">
+                            Dark Premium
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="accent">
+                        Cor principal
+                    </label>
+
+                    <select
+                        id="accent"
+                        name="accent"
+                    >
+
+                        <option value="purple">
+                            Purple
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVISO DE SEGURANÇA -->
+
+        <section class="dashboard-card security-warning">
+
+            <div class="warning-icon">
+                !
+            </div>
+
+            <div>
+
+                <strong>
+                    Configurações protegidas
+                </strong>
+
+                <p>
+                    Alterações importantes deverão ser
+                    validadas pelo backend. O frontend não
+                    deve ser considerado uma camada de
+                    segurança. Permissões, autenticação e
+                    alterações críticas serão verificadas
+                    no servidor.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>
